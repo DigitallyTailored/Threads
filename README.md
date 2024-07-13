@@ -102,4 +102,18 @@ Threads.Sync(() =>
 
 ## Notes
 
+Important Note on Disposing Thread Pools
+
+It's essential to properly dispose of each thread pool when exiting the program. This ensures that all threads are correctly stopped and system resources are freed.
+
+You can do this by calling the Threads.Dispose(int poolNumber) method for each of the pools you have created.
+
+```csharp
+// Dispose pool number 2
+Threads.Dispose(2);
+
+// Dispose the default pool
+Threads.Dispose(1);
+```
+
 The thread pool size is set to half of the system's available threads per pool. However, this can be easily overridden and a different size can be set when creating a pool.
