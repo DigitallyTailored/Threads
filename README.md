@@ -8,11 +8,13 @@ The system is designed to work on half of the system's available threads per poo
 
 ### Creating a Thread Pool
 
-You can create additional thread pools using the `Threads.CreatePool(int poolNumber)` method. This allows you to queue async tasks separately. For instance, you might have one pool focused on loading terrain chunks and another for handling Level of Detail (LoD). Tasks in different pools can run in parallel.
+To use the Threads class you will at least need to create 1 ThreadPool.
 
 ```csharp
-Threads.CreatePool(2);
+Threads.CreatePool(1);
 ```
+
+You can create additional thread pools using the `Threads.CreatePool(int poolNumber)` method. This allows you to queue async tasks separately. For instance, you might have one pool focused on loading terrain chunks and another for handling Level of Detail (LoD). Tasks in different pools can run in parallel.
 
 ### Queueing Tasks
 
